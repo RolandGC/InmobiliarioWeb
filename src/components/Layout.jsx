@@ -119,7 +119,16 @@ const Layout = () => {
                 <Outlet />
             </main>
             <footer class="bg-blue-800">
-                <div className="container mx-auto p-2 flex justify text-white">
+                <div className='bg-white p-14 text-gray-500 text-sm'>
+                    <nav>
+                        <p className='p-2'>NOSOTROS</p>
+                        <p className='p-2'>ADQUIERE UNA FRANQUICIA</p>
+                        <p className='p-2'>NOTICIAS</p>
+                        <p className='p-2'>OFICINAS</p>
+                        <p className='p-2'>CONTACTANOS</p>
+                    </nav>
+                </div>
+                <div className="container text-xs mx-auto flex justify text-white bg-blue-800 p-5">
                     <nav>
                         <span>2024 Columba Technology ® Todos los derechos reservados, Cada Oficina es de propiedad y operación Independientes.</span>
                     </nav>

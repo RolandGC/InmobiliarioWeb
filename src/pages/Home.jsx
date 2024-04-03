@@ -2,6 +2,9 @@ import React, { Fragment, useState } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import ReactPlayer from 'react-player';
+import { FaLocationDot } from "react-icons/fa6";
+import { FaSearch } from "react-icons/fa";
+
 
 const options = [
     { value: 'all', label: 'Todos los inmuebles' },
@@ -45,6 +48,7 @@ const Home = () => {
             imageAlt: "Front of men's Basic Tee in black.",
             price: '$200,000.00',
             color: 'Red',
+            type: 'HOTEL EN VENTA',
         },
         {
             id: 2,
@@ -54,6 +58,7 @@ const Home = () => {
             imageAlt: "Front of men's Basic Tee in black.",
             price: '$35',
             color: 'Black',
+            type: 'DEPARTAMENTO EN VENTA',
         },
         {
             id: 3,
@@ -63,6 +68,7 @@ const Home = () => {
             imageAlt: "Front of men's Basic Tee in black.",
             price: '$35',
             color: 'Black',
+            type: 'CASA EN VENTA',
         },
         {
             id: 4,
@@ -72,6 +78,7 @@ const Home = () => {
             imageAlt: "Front of men's Basic Tee in black.",
             price: '$34,000.00',
             color: 'Black',
+            type: 'CASA EN VENTA',
         },
         {
             id: 5,
@@ -81,6 +88,7 @@ const Home = () => {
             imageAlt: "Front of men's Basic Tee in black.",
             price: '$34,000.00',
             color: 'Black',
+            type: 'CASA EN VENTA',
         },
         {
             id: 6,
@@ -90,6 +98,7 @@ const Home = () => {
             imageAlt: "Front of men's Basic Tee in black.",
             price: '$34,000.00',
             color: 'Black',
+            type: 'CASA EN VENTA',
         },
     ]
 
@@ -100,41 +109,33 @@ const Home = () => {
                 {/* Establece la posición relativa para que los elementos internos se puedan posicionar absolutamente */}
                 <video
                     className="absolute top-0 left-0 w-full h-full object-cover z-0"
-                    autoPlay
-                    loop
-                    muted
+                    autoPlay loop muted
                 >
                     <source src="./src/assets/video.mp4" type="video/mp4" />
-                    {/* Asegúrate de tener los formatos de video correctos para la compatibilidad del navegador */}
                 </video>
 
-                <br /><br />
-                <div className="relative z-10 items-center justify-center">
-                    {/* Contenido de tu página aquí */}
-                    <h3 className="text-4xl text-white text-center">Nadie en el mundo vende mas bienes raices que RE/MAX</h3>
-                    <br />
-                    <br />
-                    <div className=" inset-0 flex items-center justify-center text-white">
+                <div className="relative z-10 items-center justify-center p-8">
+                    <h3 className="text-2xl font-bold  text-white  text-center p-8 pb-3">Nadie en el mundo vende mas bienes raices que RE/MAX</h3>
+                    <div className=" inset-0 flex items-center justify-center text-white p-6">
                         <form action="" className="flex">
-                            <div className="  flex items-center justify-center">
-                                <button className=" hover:bg-blue-700 text-white font-bold py-2 px-4 border border-white rounded-l">
+                            <div className="font-normal flex items-center justify-center">
+                                <button className=" hover:bg-blue-700 text-white py-2 px-4 border border-white rounded-l">
                                     Venta
                                 </button>
-                                <button className=" hover:bg-blue-700 text-white font-bold border border-white py-2 px-4">
+                                <button className=" hover:bg-blue-700 text-white border border-white py-2 px-4">
                                     Alquiler
                                 </button>
-                                <button className=" hover:bg-blue-700 text-white font-bold py-2 px-4 border-spacing-1 border border-white rounded-r">
+                                <button className=" hover:bg-blue-700 text-white py-2 px-4 border-spacing-1 border border-white rounded-r">
                                     Anticresis
                                 </button>
                             </div>
                         </form>
                     </div>
-                    <br />
-                    <div className=" flex items-center justify-center">
+                    <div className=" flex justify-center">
                         <div>
                             <button
                                 type="button"
-                                className="inline-flex justify-center w-full rounded-md border-none border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
+                                className="inline-flex justify-center w-full border-gray-300 shadow-sm px-4 py-3 bg-white text-sm font-medium text-gray-700 rounded-l"
                                 id="options-menu"
                                 aria-haspopup="true"
                                 aria-expanded="true"
@@ -184,51 +185,58 @@ const Home = () => {
                         <div>
                             <input aria-haspopup="true"
                                 aria-expanded="true"
-                                type="text" placeholder="En donde buscar?" className="inline-flex justify-center w-full rounded-md border-none border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" />
+                                type="text" placeholder="En donde buscar?" className="inline-flex justify-center w-full  border-gray-300 shadow-sm px-2 py-3 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-100" />
                         </div>
                         <div>
                             <input aria-haspopup="true"
                                 aria-expanded="true"
-                                type="text" placeholder="Mínimo" className="inline-flex justify-center w-full rounded-md border-none border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" />
+                                type="number" placeholder="Mínimo" className="inline-flex justify-center w-full border-none border-gray-300 shadow-sm px-2 py-3 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-100" />
                         </div>
                         <div>
                             <input aria-haspopup="true"
                                 aria-expanded="true"
-                                type="text" placeholder="Máximo" className="inline-flex justify-center w-full rounded-md border-none border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" />
+                                type="number" placeholder="Máximo" className="inline-flex justify-center w-full border-none border-gray-300 shadow-sm px-4 py-3 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-100" />
+                        </div>
+                        <div>
+                            <select
+                                id="country"
+                                name="country"
+                                autoComplete="country-name"
+                                className="inline-flex justify-center w-full rounded-r border-none border-gray-300 shadow-sm px-4 py-3 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-100"
+                            >
+                                <option>Soles</option>
+                                <option>Dólares</option>
+                            </select>
                         </div>
                     </div>
                     <div className="  items-center justify-center p-4 border-none mr-4">
                         <div className="flex justify-center items-center space-x-4">
                             <button
                                 type="button"
-                                className="px-4 py-2 bg-red-700 text-white hover:bg-blue-900 focus:outline-none rounded ml-4"
+                                className="px-2 py-3 bg-red-700 text-white hover:bg-blue-900 focus:outline-none rounded ml-4 flex items-center"
                             >
-                                Buscar alrededor mio
+                                <FaLocationDot className="flex" /> Buscar alrededor mio
                             </button>
                             <button
                                 type="button"
-                                className="px-4 py-2 bg-red-700 text-white hover:bg-blue-900 focus:outline-none rounded ml-4"
+                                className="px-14 py-3 bg-red-700 text-white hover:bg-blue-900 focus:outline-none rounded ml-4 items-center flex"
                             >
-                                Buscar
+                                <FaSearch className='flex' /> Buscar
                             </button>
                         </div>
                     </div>
                     <div>
-                        <h6 className="text-2xl text-white text-center">Más filtros</h6>
+                        <h6 className="text-xs text-white text-center">MÁS FILTROS</h6>
                     </div>
                     <br />
                     <br />
                 </div>
             </div>
 
-            <div className="justify-center">
-                <h3 className="text-gray text-center">ÚLTIMAS PROPIEDADES</h3>
-            </div>
-
             <div>
                 <div className="bg-white">
                     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 text-center">ULTIMAS PROPIEDADES</h2>
+                        <h2 className="text-2xl font-bold tracking-tight text-gray-700 text-center p-4">ÚLTIMAS PROPIEDADES</h2>
 
                         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                             {products.map((product) => (
@@ -240,12 +248,14 @@ const Home = () => {
                                             className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                                         />
                                     </div>
+                                    <span className="bg-[#DC3545] absolute top-5 right-2 py-1 px-3 rounded-md text-white text-xs" >ID: {product.id}</span>
+                                    <span className="bg-blue-800 absolute bottom-16 right-2 py-1 px-3 rounded-md text-white text-xs" >{product.type}</span>
                                     <div className="mt-4 flex justify-between">
                                         <div>
                                             <h3 className="text-sm text-gray-700">
                                                 <a href={product.href}>
-                                                    <span aria-hidden="true" className="absolute inset-0" />
-                                                    {product.name}
+                                                    <span aria-hidden="true" className="absolute inset-0 flex-initial" />
+                                                    <FaLocationDot className="flex" />{product.name}
                                                 </a>
                                             </h3>
                                             <p className="mt-1 text-sm text-gray-500">{product.color}</p>
