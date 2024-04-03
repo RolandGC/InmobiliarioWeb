@@ -4,7 +4,7 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai"
 import { FaTiktok } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
-import { FaInstagramSquare } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 
 
@@ -74,7 +74,7 @@ const Layout = () => {
                     <FaFacebookF className="ml-4" />
                     <FaTiktok className="ml-4" />
                     <FaYoutube className="ml-4" />
-                    <FaInstagramSquare className="ml-4" />
+                    <FaInstagram className="ml-4" />
 
                 </div>
             </div>
@@ -89,7 +89,7 @@ const Layout = () => {
                 {
                     windowDimension.innerWidth > 768 ?
                         links.map((l) => (
-                            <Link className="text-l text-gray-400 font-semibold" to={l.link} key={l.id}>{l.text}</Link>
+                            <Link className="text-l text-gray-400 font-semibold hover:underline hover:text-red-700" to={l.link} key={l.id}>{l.text}</Link>
                         )) :
                         isMenuOpen &&
                         links.map((l) => (

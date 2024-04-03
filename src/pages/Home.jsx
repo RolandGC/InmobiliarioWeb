@@ -37,6 +37,36 @@ const Home = () => {
         setInputValue(e.target.value);
     };
 
+    const products = [
+        {
+            id: 1,
+            name: 'Basic Tee',
+            href: '#',
+            imageSrc: './src/assets/dep1.jpg',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$35',
+            color: 'Black',
+        },
+        {
+            id: 2,
+            name: 'Basic Tee',
+            href: '#',
+            imageSrc: './src/assets/dep2.jpeg',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$35',
+            color: 'Black',
+        },
+        {
+            id: 3,
+            name: 'Basic Tee',
+            href: '#',
+            imageSrc: './src/assets/fotoFam.jpeg',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$35',
+            color: 'Black',
+        },
+    ]
+
     return (
 
         <main>
@@ -190,85 +220,43 @@ const Home = () => {
                 </div>
             </div>
 
+            <div>
+                <div className="bg-white">
+                    <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+                        <h2 className="text-2xl font-bold tracking-tight text-gray-900">Customers also purchased</h2>
+
+                        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                            {products.map((product) => (
+                                <div key={product.id} className="group relative">
+                                    <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                                        <img
+                                            src={product.imageSrc}
+                                            alt={product.imageAlt}
+                                            className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                                        />
+                                    </div>
+                                    <div className="mt-4 flex justify-between">
+                                        <div>
+                                            <h3 className="text-sm text-gray-700">
+                                                <a href={product.href}>
+                                                    <span aria-hidden="true" className="absolute inset-0" />
+                                                    {product.name}
+                                                </a>
+                                            </h3>
+                                            <p className="mt-1 text-sm text-gray-500">{product.color}</p>
+                                        </div>
+                                        <p className="text-sm font-medium text-gray-900">{product.price}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div className="">
                 <div className="" >
-                    {/* <div className="relative h-screen">
-                        <video autoPlay loop muted className="absolute inset-0 w-full h-full object-cover">
-                            <source src={backgroundVideo} type="video/mp4" />
-                        </video>
-                        <div className="bsolute inset-0 flex items-center justify-center text-white">
-                            <div className=" flex items-center justify-center text-white text-xl">
-                                <span>Nadie en el mundo vende mas bienes raices que RE/MAX</span>
-                            </div>
-                            <form action="" className="flex">
-                                <div className="  flex items-center justify-center">
-                                    <button className=" hover:bg-blue-700 text-white font-bold py-2 px-4 border border-white rounded-l">
-                                        Venta
-                                    </button>
-                                    <button className=" hover:bg-blue-700 text-white font-bold border border-white py-2 px-4">
-                                        Alquiler
-                                    </button>
-                                    <button className=" hover:bg-blue-700 text-white font-bold py-2 px-4 border-spacing-1 border border-white rounded-r">
-                                        Anticresis
-                                    </button>
-                                </div>
-                                <div className=" flex items-center justify-center">
-                                    <div>
-                                        <button
-                                            type="button"
-                                            className="inline-flex justify-center w-full rounded-md border-none border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
-                                            id="options-menu"
-                                            aria-haspopup="true"
-                                            aria-expanded="true"
-                                            onClick={toggleDropdown}
-                                        >
-                                            {selectedOption.label}
-                                            <svg
-                                                className="-mr-1 ml-2 h-5 w-5"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 20 20"
-                                                fill="currentColor"
-                                                aria-hidden="true"
-                                            >
-                                                <path
-                                                    fillRule="evenodd"
-                                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                    clipRule="evenodd"
-                                                />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    {isOpen && (
-                                        <div
-                                            className="origin-top-right relative right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
-                                            role="menu"
-                                            aria-orientation="vertical"
-                                            aria-labelledby="options-menu"
-                                        >
-                                            <div className="py-1" role="none">
-                                                {options.map((option) => (
-                                                    <a
-                                                        href="#"
-                                                        className={`${option.value === selectedOption.value
-                                                            ? 'bg-gray-100 text-gray-900'
-                                                            : 'text-gray-700'
-                                                            } block px-4 py-2 text-sm`}
-                                                        role="menuitem"
-                                                        key={option.value}
-                                                        onClick={() => selectOption(option)}
-                                                    >
-                                                        {option.label}
-                                                    </a>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
-                            </form>
-                        </div>
-                    </div> */}
                 </div>
-
             </div>
         </main>
     )
