@@ -5,7 +5,7 @@ import { FaTiktok } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-
+import { IoMdLogIn } from "react-icons/io";
 
 
 const links = [              //avace 27-03
@@ -31,7 +31,7 @@ const links = [              //avace 27-03
     },
     {
         link: "/contacto",
-        text: "CONTACTO",
+        text: "CONTACTOS",
         id: 5,
     },
 ];
@@ -59,66 +59,62 @@ const Layout = () => {
 
     return (
         <div>
-            <div className="bg-blue-800">
-                <div className="flex items-center justify-end text-white ml-4 text-l">
-                    <div className="ml-4">
+            <div className="bg-blue-900 p-2">
+                <div className="flex items-center justify-end text-white ml-4 text-sm">
+                    <div className="ml-4 text-xs">
                         <span>
-                            Se tu asesor
+                            Sé un asesor
                         </span>
                     </div>
-                    <div className="ml-4">
+                    <div className="ml-4 text-xs">
                         <span>
                             Franquicias
                         </span>
                     </div>
-                    <FaFacebookF className="ml-4" />
+                    <FaFacebookF className="ml-4 " />
                     <FaTiktok className="ml-4" />
                     <FaYoutube className="ml-4" />
                     <FaInstagram className="ml-4" />
+                    <IoMdLogIn className='ml-4 mr-1' />
+                    <div className="ml-1 mr-8 text-xs">
+                        <span>
+                            Mi RE/MAX
+                        </span>
+                    </div>
 
                 </div>
             </div>
-            <div className={
-                !isMenuOpen
-                    ? "flex  items-center w-full px-4 justify-around bg-white"
-                    : "flex flex-col w-full px-4 justify-around bg-blue-800"
-            }>
-                <Link to={"/"} className="text-white font-semibold text-xl p-2" >
-                    <img src="./src/assets/logo.svg" alt="" width="140" height="140" />
-                </Link>
-                {
-                    windowDimension.innerWidth > 768 ?
-                        links.map((l) => (
-                            <Link className="text-l text-gray-400 font-semibold hover:underline hover:text-red-700" to={l.link} key={l.id}>{l.text}</Link>
-                        )) :
-                        isMenuOpen &&
-                        links.map((l) => (
-                            <Link className="text-m text-gray-400 font-semibold" to={l.link} key={l.id}>{l.text}</Link>
-                        ))
-                }
-                {!isMenuOpen && windowDimension.innerWidth < 768 ? (
-                    <AiOutlineMenu cursor={"pointer"} size={24} color="blue-900" onClick={() => setIsMenuOpen(true)} />
-                ) : (
-                    windowDimension.innerWidth < 768 && (
-                        <AiOutlineClose cursor={"pointer"} size={24} color="blue-900" onClick={() => setIsMenuOpen(false)} />))}
+            <div className="flex p-2">
+                <div className=" ml-4 items-center p-2">
+                    <Link to={"/"} className="text-white justify-start font-semibold text-xl " >
+                        <img src="./src/assets/logo.svg" alt="" width="150" height="150" />
+                    </Link>
+                </div>
+                <div className={
+                    !isMenuOpen
+                        ? "flex  items-center w-full px-4 justify-end bg-white"
+                        : "flex flex-col w-full px-4 justify-around bg-blue-800"
+                } >
+                    {
+                        windowDimension.innerWidth > 768 ?
+                            links.map((l) => (
+                                <Link className="text-sm font-normal justify-end text-gray-500 hover:underline ml-2 mr-2 pl-2 pr-2" to={l.link} key={l.id}>{l.text}</Link>
+                            )) :
+                            isMenuOpen &&
+                            links.map((l) => (
+                                <Link className="text-m text-gray-400 font-semibold" to={l.link} key={l.id}>{l.text}</Link>
+                            ))
+                    }
+                    {!isMenuOpen && windowDimension.innerWidth < 768 ? (
+                        <AiOutlineMenu cursor={"pointer"} size={24} color="blue-900" onClick={() => setIsMenuOpen(true)} />
+                    ) : (
+                        windowDimension.innerWidth < 768 && (
+                            <AiOutlineClose cursor={"pointer"} size={24} color="blue-900" onClick={() => setIsMenuOpen(false)} />))}
+                </div>
             </div>
 
             {/* avance 27-03 */}
-            <header className='bg-slate-200'>
-                {/* <div className="container mx-auto p-2">
-                    <nav >
-                        <div className="flex justify" >
-                            <ul class="flex justify-center space-x-4" >
-                                <img src="./src/assets/pazhogarpng.png" alt="" width="60" height="60" />
-                                <li><a href="/" class="hover:text-gray-400 text-2xl">Inicio</a></li>
-                                <li><a href="/comprar" class="hover:text-gray-400 text-2xl">Comprar</a></li>
-                                <li><a href="/alquilar" class="hover:text-gray-400 text-2xl">Alquilar</a></li>
-                                <li><a href="/contacto" class="hover:text-gray-400 text-2xl">Contacto</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div> */}
-            </header>
+
             <main className='bg-gray-300'>
                 <Outlet />
             </main>
