@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import backgroundVideo from '../assets/video.mp4'
 import ReactPlayer from 'react-player';
 
 const options = [
@@ -40,12 +39,12 @@ const Home = () => {
     const products = [
         {
             id: 1,
-            name: 'Basic Tee',
+            name: 'Lima, Lima, Miraflores',
             href: '#',
             imageSrc: './src/assets/dep1.jpg',
             imageAlt: "Front of men's Basic Tee in black.",
-            price: '$35',
-            color: 'Black',
+            price: '$200,000.00',
+            color: 'Red',
         },
         {
             id: 2,
@@ -63,6 +62,33 @@ const Home = () => {
             imageSrc: './src/assets/fotoFam.jpeg',
             imageAlt: "Front of men's Basic Tee in black.",
             price: '$35',
+            color: 'Black',
+        },
+        {
+            id: 4,
+            name: 'Lima, Lima, Surquillo',
+            href: '#',
+            imageSrc: './src/assets/img1.jpeg',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$34,000.00',
+            color: 'Black',
+        },
+        {
+            id: 5,
+            name: 'Lima, Lima, Surquillo',
+            href: '#',
+            imageSrc: './src/assets/img4.jpeg',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$34,000.00',
+            color: 'Black',
+        },
+        {
+            id: 6,
+            name: 'Lima, Lima, Surquillo',
+            href: '#',
+            imageSrc: './src/assets/img2.jpeg',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: '$34,000.00',
             color: 'Black',
         },
     ]
@@ -199,31 +225,10 @@ const Home = () => {
                 <h3 className="text-gray text-center">ÚLTIMAS PROPIEDADES</h3>
             </div>
 
-            <div className=" container mx-auto p-2 bg-cover">
-                <section>
-                    <h2>Contenido principal</h2>
-                    <p>Nuestras tendencias</p>
-                </section>
-                <div>
-                    <article>
-                        <figure>
-                            <img src="./src/assets/dep1.jpg" alt="" />
-                        </figure>
-                    </article>
-                </div>
-                <div>
-                    <article>
-                        <figure>
-                            <img src="./src/assets/dep2.jpeg" alt="" />
-                        </figure>
-                    </article>
-                </div>
-            </div>
-
             <div>
                 <div className="bg-white">
                     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900">Customers also purchased</h2>
+                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 text-center">ULTIMAS PROPIEDADES</h2>
 
                         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                             {products.map((product) => (
@@ -251,6 +256,27 @@ const Home = () => {
                             ))}
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div className=" container mx-auto p-2 bg-cover">
+                <section>
+                    <h2>Contenido principal</h2>
+                    <p>Nuestras tendencias</p>
+                </section>
+                <div>
+                    <article>
+                        <figure>
+                            <img src="./src/assets/dep1.jpg" alt="" />
+                        </figure>
+                    </article>
+                </div>
+                <div>
+                    <article>
+                        <figure>
+                            <img src="./src/assets/dep2.jpeg" alt="" />
+                        </figure>
+                    </article>
                 </div>
             </div>
 
