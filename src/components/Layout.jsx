@@ -6,6 +6,8 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { IoMdLogIn } from "react-icons/io";
+import { ImMail } from "react-icons/im";
+import { BiSolidPhoneCall } from "react-icons/bi";
 
 
 const links = [              //avace 27-03
@@ -118,17 +120,34 @@ const Layout = () => {
             <main className='bg-gray-300'>
                 <Outlet />
             </main>
-            <footer class="bg-blue-800">
-                <div className='bg-white p-14 text-gray-500 text-sm'>
-                    <nav>
-                        <p className='p-2'>NOSOTROS</p>
-                        <p className='p-2'>ADQUIERE UNA FRANQUICIA</p>
-                        <p className='p-2'>NOTICIAS</p>
-                        <p className='p-2'>OFICINAS</p>
-                        <p className='p-2'>CONTACTANOS</p>
-                    </nav>
+            <footer class="bg-blue-800 justify-center">
+                <div className='flex items-center bg-white'>
+                    <div className='bg-white p-14 text-gray-500 text-sm flex-1'>
+                        <nav>
+                            <p className='p-2'>NOSOTROS</p>
+                            <p className='p-2'>ADQUIERE UNA FRANQUICIA</p>
+                            <p className='p-2'>NOTICIAS</p>
+                            <p className='p-2'>OFICINAS</p>
+                            <p className='p-2'>CONTACTANOS</p>
+                        </nav>
+                    </div>
+                    <div className='p-14 flex-1'>
+                        <p className='text-red-700'>INFORMES</p>
+                        <div className='flex'>
+                            <BiSolidPhoneCall className='' />
+                            <div>
+                                TELEFONO
+                            </div>
+                        </div>
+                        <div className='grid '>
+                            EMAILS
+                            <ImMail />
+                            <a className='text-blue-500' href="info@remax.net.pe">info@remax.net.pe</a>
+                            <a className='text-blue-500' href="">ventas@remax.net.pe</a>
+                        </div>
+                    </div>
                 </div>
-                <div className="container text-xs mx-auto flex justify text-white bg-blue-800 p-5">
+                <div className="container text-xs mx-auto flex justify-center text-white bg-blue-800 p-5">
                     <nav>
                         <span>2024 Columba Technology ® Todos los derechos reservados, Cada Oficina es de propiedad y operación Independientes.</span>
                     </nav>
