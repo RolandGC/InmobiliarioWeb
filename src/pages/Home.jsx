@@ -59,7 +59,6 @@ const Home = () => {
 
         <main>
             <div className="relative">
-                {/* Establece la posición relativa para que los elementos internos se puedan posicionar absolutamente */}
                 <video
                     className="absolute top-0 left-0 w-full h-full object-cover z-0"
                     autoPlay loop muted
@@ -194,16 +193,16 @@ const Home = () => {
                         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                             {products.map((product) => (
                                 <div key={product.id} className="group relative">
-                                    <div>
-                                        <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                                    <div className=''>
+                                        <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-t bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                                             <img
                                                 src={product.imageSrc}
                                                 alt={product.imageAlt}
                                                 className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                                             />
+                                            <span className="bg-[#DC3545] absolute top-5 right-2 py-1 px-3 rounded-md text-white text-xs" >ID: {product.id}</span>
+                                            <span className="bg-blue-800 text-end  bottom-16 right-2 py-1 px-3 rounded-md text-white text-xs" >{product.type}</span>
                                         </div>
-                                        <span className="bg-[#DC3545] absolute top-5 right-2 py-1 px-3 rounded-md text-white text-xs" >ID: {product.id}</span>
-                                        <span className="bg-blue-800 absolute bottom-16 right-2 py-1 px-3 rounded-md text-white text-xs" >{product.type}</span>
                                     </div>
                                     <div>
                                         <div className="mt-4 flex justify-between">

@@ -120,8 +120,24 @@ const Layout = () => {
             <main className='bg-gray-300'>
                 <Outlet />
             </main>
-            <footer class="bg-blue-800 justify-center">
-                <div className='flex items-center bg-white'>
+            <footer class="bg-blue-800 relative">
+                <div className='text-center inset-x-0 mx-auto bg-white p-4  '>
+                    <ul className='justify-center flex text-blue-800 text-3xl bg-white p-4 shadow-md absolute top-[-40px] right-[35%] pl-10 pr-10 rounded-lg'>
+                        <li>
+                            <FaFacebookF className="ml-1 " />
+                        </li>
+                        <li>
+                            <FaYoutube className="ml-8" />
+                        </li>
+                        <li>
+                            <FaTiktok className="ml-8" />
+                        </li>
+                        <li>
+                            <FaInstagram className="ml-8" />
+                        </li>
+                    </ul>
+                </div>
+                <div className='flex bg-white'>
                     <div className='bg-white p-14 text-gray-500 text-sm flex-1'>
                         <nav>
                             <p className='p-2'>NOSOTROS</p>
@@ -129,22 +145,34 @@ const Layout = () => {
                             <p className='p-2'>NOTICIAS</p>
                             <p className='p-2'>OFICINAS</p>
                             <p className='p-2'>CONTACTANOS</p>
+                            <p className='p-2'>SÉ UN ASESOR</p>
+                            <p className='p-2'>BUSCA UN ASESOR</p>
+                            <p className='p-2'>POLITICA DE PRIVACIDAD</p>
                         </nav>
                     </div>
                     <div className='p-14 flex-1'>
                         <p className='text-red-700'>INFORMES</p>
-                        <div className='flex'>
-                            <BiSolidPhoneCall className='' />
-                            <div>
-                                TELEFONO
-                            </div>
-                        </div>
-                        <div className='grid '>
-                            EMAILS
-                            <ImMail />
-                            <a className='text-blue-500' href="info@remax.net.pe">info@remax.net.pe</a>
-                            <a className='text-blue-500' href="">ventas@remax.net.pe</a>
-                        </div>
+                        <ul>
+                            <li className='flex items-center mb-2'>
+                                <div className='m-3'>
+                                    <BiSolidPhoneCall className='text-red-500 text-2xl' />
+                                </div>
+                                <div className='text-gray-500 text-sm'>
+                                    <h5>TELEFONO</h5>
+                                    (511) 4444 555
+                                </div>
+                            </li>
+                            <li className='flex items-center'>
+                                <div className='bg-white m-3'>
+                                    <ImMail className='text-white bg-red-500 text-2xl' />
+                                </div>
+                                <div className='flex flex-col text-xs'>
+                                    <h5 className='text-gray-500 whitespace-normal'>EMAILS</h5>
+                                    <a className='text-blue-500' href="info@remax.net.pe">info@remax.net.pe</a>
+                                    <a className='text-blue-500' href="">ventas@remax.net.pe</a>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div className="container text-xs mx-auto flex justify-center text-white bg-blue-800 p-5">
