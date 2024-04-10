@@ -137,42 +137,47 @@ const Layout = () => {
                         </li>
                     </ul>
                 </div>
-                <div className='flex bg-white'>
-                    <div className='bg-white p-14 text-gray-500 text-sm flex-1'>
-                        <nav>
-                            <p className='p-2'>NOSOTROS</p>
-                            <p className='p-2'>ADQUIERE UNA FRANQUICIA</p>
-                            <p className='p-2'>NOTICIAS</p>
-                            <p className='p-2'>OFICINAS</p>
-                            <p className='p-2'>CONTACTANOS</p>
-                            <p className='p-2'>SÉ UN ASESOR</p>
-                            <p className='p-2'>BUSCA UN ASESOR</p>
-                            <p className='p-2'>POLITICA DE PRIVACIDAD</p>
-                        </nav>
+                <div className=' bg-white'>
+                    <div className='absolute bottom-14 right-2' width="77" height="96">
+                        <img src="./src/assets/globo.svg" alt="Animated Image" width="116" height="145" className='animate-float' />
                     </div>
-                    <div className='p-14 flex-1'>
-                        <p className='text-red-700'>INFORMES</p>
-                        <ul>
-                            <li className='flex items-center mb-2'>
-                                <div className='m-3'>
-                                    <BiSolidPhoneCall className='text-red-500 text-2xl' />
-                                </div>
-                                <div className='text-gray-500 text-sm'>
-                                    <h5>TELEFONO</h5>
-                                    (511) 4444 555
-                                </div>
-                            </li>
-                            <li className='flex items-center'>
-                                <div className='bg-white m-3'>
-                                    <ImMail className='text-white bg-red-500 text-2xl' />
-                                </div>
-                                <div className='flex flex-col text-xs'>
-                                    <h5 className='text-gray-500 whitespace-normal'>EMAILS</h5>
-                                    <a className='text-blue-500' href="info@remax.net.pe">info@remax.net.pe</a>
-                                    <a className='text-blue-500' href="">ventas@remax.net.pe</a>
-                                </div>
-                            </li>
-                        </ul>
+                    <div className='flex bg-white'>
+                        <div className='bg-white p-14 text-gray-400 text-sm flex-1'>
+                            <nav>
+                                <p className='p-2 hover:text-blue-700'>ADQUIERE UNA FRANQUICIA</p>
+                                <p className='p-2 hover:text-blue-700 '>NOSOTROS</p>
+                                <p className='p-2 hover:text-blue-700'>NOTICIAS</p>
+                                <p className='p-2 hover:text-blue-700'>OFICINAS</p>
+                                <p className='p-2 hover:text-blue-700'>CONTACTANOS</p>
+                                <p className='p-2 hover:text-blue-700'>SÉ UN ASESOR</p>
+                                <p className='p-2 hover:text-blue-700'>BUSCA UN ASESOR</p>
+                                <p className='p-2 hover:text-blue-700'>POLITICA DE PRIVACIDAD</p>
+                            </nav>
+                        </div>
+                        <div className='p-14 flex-1'>
+                            <p className='text-red-700'>INFORMES</p>
+                            <ul>
+                                <li className='flex items-center mb-2'>
+                                    <div className='m-3'>
+                                        <BiSolidPhoneCall className='text-red-500 text-2xl' />
+                                    </div>
+                                    <div className='text-gray-500 text-sm'>
+                                        <h5>TELEFONO</h5>
+                                        (511) 4444 555
+                                    </div>
+                                </li>
+                                <li className='flex items-center'>
+                                    <div className='bg-white m-3'>
+                                        <ImMail className='text-white bg-red-500 text-2xl' />
+                                    </div>
+                                    <div className='flex flex-col text-xs'>
+                                        <h5 className='text-gray-500 whitespace-normal'>EMAILS</h5>
+                                        <a className='text-blue-500' href="info@remax.net.pe">info@remax.net.pe</a>
+                                        <a className='text-blue-500' href="">ventas@remax.net.pe</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div className="container text-xs mx-auto flex justify-center text-white bg-blue-800 p-5">

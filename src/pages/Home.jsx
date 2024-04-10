@@ -46,7 +46,31 @@ const Home = () => {
             href: '#',
             imageSrc: './src/assets/dep1.jpg',
             imageAlt: "Front of men's Basic Tee in black.",
-            price: '$200,000.00',
+            price: 'S/. 360,000.00  -  USD 100,000.00',
+            ruc: 'Ruc 206042345433',
+            society: 'Rg SAC',
+            type: 'HOTEL EN VENTA',
+            area: '5,642.00 m²',
+        },
+        {
+            id: 2,
+            locate: 'Lima, Lima, Miraflores',
+            href: '#',
+            imageSrc: './src/assets/dep1.jpg',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: 'S/. 360,000.00  -  USD 100,000.00',
+            ruc: 'Ruc 206042345433',
+            society: 'Rg SAC',
+            type: 'HOTEL EN VENTA',
+            area: '5,642.00 m²',
+        },
+        {
+            id: 3,
+            locate: 'Lima, Lima, Miraflores',
+            href: '#',
+            imageSrc: './src/assets/dep1.jpg',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: 'S/. 360,000.00  -  USD 100,000.00',
             ruc: 'Ruc 206042345433',
             society: 'Rg SAC',
             type: 'HOTEL EN VENTA',
@@ -57,7 +81,7 @@ const Home = () => {
 
     return (
 
-        <main>
+        <main className='bg-gray-200'>
             <div className="relative">
                 <video
                     className="absolute top-0 left-0 w-full h-full object-cover z-0"
@@ -111,7 +135,7 @@ const Home = () => {
                         </div>
                         {isOpen && (
                             <div
-                                className="origin-top-right relative right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+                                className=" absolute left-48  mt-2 w-46 shadow-lg bg-white ring-1 ring-black ring-opacity-10"
                                 role="menu"
                                 aria-orientation="vertical"
                                 aria-labelledby="options-menu"
@@ -119,10 +143,9 @@ const Home = () => {
                                 <div className="py-1" role="none">
                                     {options.map((option) => (
                                         <a
-                                            href="#"
                                             className={`${option.value === selectedOption.value
-                                                ? 'bg-gray-100 text-gray-900'
-                                                : 'text-gray-700'
+                                                ? 'bg-red-700 text-white'
+                                                : 'text-gray-700 hover:bg-red-700 hover:text-white'
                                                 } block px-4 py-2 text-sm`}
                                             role="menuitem"
                                             key={option.value}
@@ -134,10 +157,10 @@ const Home = () => {
                                 </div>
                             </div>
                         )}
-                        <div>
+                        <div className=''>
                             <input aria-haspopup="true"
                                 aria-expanded="true"
-                                type="text" placeholder="En donde buscar?" className="inline-flex justify-center w-full  border-gray-300 shadow-sm px-2 py-3 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-100" />
+                                type="text" placeholder="En donde buscar?" className="inline-flex justify-center w-full   shadow-sm px-2 py-3 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-100" />
                         </div>
                         <div>
                             <input aria-haspopup="true"
@@ -165,15 +188,15 @@ const Home = () => {
                         <div className="flex justify-center items-center space-x-4">
                             <button
                                 type="button"
-                                className="px-2 py-3 bg-red-700 text-white hover:bg-blue-900 focus:outline-none rounded ml-4 flex items-center"
+                                className="px-2 py-3 bg-red-700 text-white hover:bg-blue-900 focus:outline-none rounded ml-4 flex items-center text-sm"
                             >
-                                <FaLocationDot className="flex" /> BUSCAR ALREDEDOR MIO
+                                <FaLocationDot className="flex mr-1" /> BUSCAR ALREDEDOR MIO
                             </button>
                             <button
                                 type="button"
-                                className="px-14 py-3 bg-red-700 text-white hover:bg-blue-900 focus:outline-none rounded ml-4 items-center flex"
+                                className="px-16 py-3 bg-red-700 text-white hover:bg-blue-900 focus:outline-none rounded ml-4 items-center flex text-sm"
                             >
-                                <FaSearch className='flex' /> BUSCAR
+                                <FaSearch className='flex mr-1' /> BUSCAR
                             </button>
                         </div>
                     </div>
@@ -186,7 +209,7 @@ const Home = () => {
             </div>
 
             <div>
-                <div className="bg-white">
+                <div className="">
                     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
                         <h2 className="text-2xl font-bold tracking-tight text-gray-700 text-center p-4">ÚLTIMAS PROPIEDADES</h2>
 
@@ -194,29 +217,27 @@ const Home = () => {
                             {products.map((product) => (
                                 <div key={product.id} className="group relative">
                                     <div className=''>
-                                        <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-t bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                                        <div className="w-full overflow-hidden rounded-t-lg bg-gray-200 lg:h-80">
                                             <img
                                                 src={product.imageSrc}
                                                 alt={product.imageAlt}
                                                 className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                                             />
-                                            <span className="bg-[#DC3545] absolute top-5 right-2 py-1 px-3 rounded-md text-white text-xs" >ID: {product.id}</span>
-                                            <span className="bg-blue-800 text-end  bottom-16 right-2 py-1 px-3 rounded-md text-white text-xs" >{product.type}</span>
+                                            <span className="bg-[#DC3545] absolute top-5 right-2 py-1 px-3 rounded-full text-white text-[10px]" >ID: {product.id}</span>
+                                            <span className="bg-blue-800 absolute text-end bottom-36 right-2 py-1 px-3 rounded-full text-white text-[10px]" >{product.type}</span>
                                         </div>
                                     </div>
-                                    <div>
+                                    <div className='bg-white p-2'>
                                         <div className="mt-4 flex justify-between">
-                                            <div>
-                                                <h3 className="text-sm text-gray-700">
-                                                    <a href={product.href}>
-                                                        <span aria-hidden="true" className="absolute inset-0 flex-initial" />
-                                                        <FaLocationDot className="flex" />{product.locate}
-                                                    </a>
+                                            <div className='ml-3'>
+                                                <p className="text-xs font-medium text-blue-700 mb-4">{product.price}</p>
+                                                <h3 className="text-xs text-gray-600 mb-5 flex">
+                                                    <span aria-hidden="true" className="absolute inset-0 flex-initial" />
+                                                    <FaLocationDot className="mr-1 mt-1" />{product.locate}
                                                 </h3>
-                                                <p className="mt-1 text-sm text-gray-500">{product.ruc}</p>
-                                                <p className="mt-1 text-sm text-gray-500">{product.society}</p>
+                                                <p className="text-[10px] text-gray-400">{product.ruc}</p>
+                                                <p className="text-[11px] text-gray-400">{product.society}</p>
                                             </div>
-                                            <p className="text-sm font-medium text-gray-900">{product.price}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -225,11 +246,20 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <div className='flex justify-center items-center p-4'>
+                <h5 className='mr-1 text-xl text-gray-600'>Busca entre más de 17,976 Propiedades</h5>
+                <button className='bg-red-600 p-3 text-white text-sm'>
+                    VER MÁS
+                </button>
+            </div>
 
-            <div className=" container mx-auto p-2 bg-cover">
-                <section>
-                    <h2>Contenido principal</h2>
-                    <p>Nuestras tendencias</p>
+            <div className="justify-center items-center container mx-auto p-2 bg-cover">
+                <section className='justify-center'>
+                    <h2>ENCUENTRA TU LUGAR IDEAL</h2>
+                    <p>Más de 2,729 Asesores calificados para tu búsqueda.</p>
+                    <button className='bg-red-600 p-3 text-white text-sm'>
+                        CONTACTANOS
+                    </button>
                 </section>
                 <div>
                     <article>
